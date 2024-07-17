@@ -822,10 +822,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: fe4eae9b-c285-4930-87e5-e5d8bea3a2e5
+  cloudProjectId: 7a350260-671f-4a80-ac77-ae0a811bb1cc
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Plants survivous online
+  projectName: Plants survivors online
   organizationId: dima_zharov
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
