@@ -1,11 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementJoystick : JoystickHandler
 {
-    public Vector2 ReturnVectorDirection()
+    [SerializeField] PlayerMovement _playerMovement;
+
+    private void Update()
     {
-        return new Vector2(_inputVector.x, _inputVector.y);
+        if(_inputVector.x != 0  || _inputVector.y != 0)
+        {
+            _playerMovement.MovePlayer(new Vector2(_inputVector.x, _inputVector.y) * Time.deltaTime);
+        }
+        else
+        {
+            AnimationEventManager.SendBoolParametrChanged(false, nameof(AnimParametersEnum.isRunning));
+        }
     }
 }
