@@ -8,7 +8,7 @@ public class MovementJoystick : JoystickHandler
     {
         if(_inputVector.x != 0  || _inputVector.y != 0)
         {
-            _playerMovement.MovePlayer(new Vector2(_inputVector.x, _inputVector.y) * Time.deltaTime);
+            _playerMovement.MovePlayer(new Vector2(_inputVector.x, _inputVector.y));
         }
         else
         {

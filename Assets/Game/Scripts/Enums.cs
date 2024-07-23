@@ -5,3 +5,11 @@ public enum AnimParametersEnum
     isAttacking,
     Died
 }
+
+public enum CameraBarrierEnums
+{
+    upBarrier,
+    downBarrier,
+    rightBarrier,
+    leftBarrier
+}

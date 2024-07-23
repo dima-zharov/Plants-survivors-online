@@ -1,17 +1,19 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class CameraMovement : BarrierData
 {
-    [SerializeField] private GameObject _player;
-    [SerializeField] private float _upBarrier;
-    [SerializeField] private float _downBarrier;
-    [SerializeField] private float _rightBarrier;
-    [SerializeField] private float _leftBarrier;
+    private GameObject _player;
+
+
 
     private Vector3 _targetPosition;
 
+    private void Start()
+    {
+       _player = FindFirstObjectByType<PlayerMovement>().gameObject;
+    }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         Move();
     }
@@ -25,7 +27,7 @@ public class CameraMovement : MonoBehaviour
         playerX =  Mathf.Clamp(playerX, _leftBarrier, _rightBarrier);
         playerY = Mathf.Clamp(playerY, _downBarrier, _upBarrier);
 
-        _targetPosition = new Vector3(playerX, playerY, _player.transform.position.z - 10);
+        _targetPosition = new Vector3(playerX, playerY + 0.8f, _player.transform.position.z - 10);
         transform.position = _targetPosition;
     }
 }
